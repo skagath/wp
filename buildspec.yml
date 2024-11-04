@@ -4,13 +4,13 @@ phases:
     commands:
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 438465160558.dkr.ecr.us-east-1.amazonaws.com
-      - REPOSITORY_URI=438465160558.dkr.ecr.us-east-1.amazonaws.com/mysql
+      - REPOSITORY_URI=docker tag wordpress:latest 438465160558.dkr.ecr.us-east-1.amazonaws.com/wordpress
   build:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
       - docker build -t wordpress .
-      - docker tag sample-node-app:latest $REPOSITORY_URI:latest
+      - docker tag wordpress:latest $REPOSITORY_URI:latest
   post_build:
     commands:
       - echo Build completed on `date`
