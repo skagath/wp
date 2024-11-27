@@ -12,7 +12,7 @@ RUN a2enmod rewrite
 # Set the ServerName to suppress the warning
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
-ENV WORDPRESS_DB_HOST=mysql.czkq8giion5k.us-east-1.rds.amazonaws.com
+ENV WORDPRESS_DB_HOST=database-1.czkq8giion5k.us-east-1.rds.amazonaws.com
 ENV WORDPRESS_DB_USER=admin
 ENV WORDPRESS_DB_PASSWORD=Zaq123456
 ENV WORDPRESS_DB_NAME=mydb
