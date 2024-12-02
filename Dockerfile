@@ -9,7 +9,7 @@ RUN apt-get update && apt-get upgrade -y && \
 # Enable Apache mod_rewrite for WordPress
 RUN a2enmod rewrite
 
-# Set the ServerName to suppress the warning
+# Set the ServerName to suppress the warning.
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
 ENV WORDPRESS_DB_HOST=database-1.czkq8giion5k.us-east-1.rds.amazonaws.com
